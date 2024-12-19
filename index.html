@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fenêtre PVC Classique Customization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .color-swatches {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .color-swatch {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .color-swatch.red {
+            background-color: red;
+        }
+        .color-swatch.blue {
+            background-color: blue;
+        }
+        .color-swatch.green {
+            background-color: green;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customize Your Fenêtre PVC Classique</h1>
+        <form action="/submit" method="POST">
+            <!-- Dimensions -->
+            <div class="form-group">
+                <label for="width">Width (cm):</label>
+                <input type="number" id="width" name="width" required>
+            </div>
+            <div class="form-group">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" required>
+            </div>
+
+            <!-- Material -->
+            <div class="form-group">
+                <label for="material">Material:</label>
+                <select id="material" name="material" required>
+                    <option value="PVC">PVC</option>
+                </select>
+            </div>
+
+            <!-- Glass Type -->
+            <div class="form-group">
+                <label>Glass Type:</label>
+                <label><input type="radio" name="glass" value="Double" required> Double</label>
+                <label><input type="radio" name="glass" value="Triple"> Triple</label>
+                <label><input type="radio" name="glass" value="Acoustic"> Acoustic</label>
+                <label><input type="radio" name="glass" value="Frosted"> Frosted</label>
+            </div>
+
+            <!-- Color Options -->
+            <div class="form-group">
+                <label>Color:</label>
+                <div class="color-swatches">
+                    <div class="color-swatch red" data-color="Red"></div>
+                    <div class="color-swatch blue" data-color="Blue"></div>
+                    <div class="color-swatch green" data-color="Green"></div>
+                    <div class="color-swatch white" style="background-color: white; border: 1px solid #ccc;"></div>
+                    <div class="color-swatch grey" style="background-color: grey;"></div>
+                </div>
+            </div>
+
+            <!-- Additional Items -->
+            <div class="form-group">
+                <label>Additional Items:</label>
+                <label><input type="checkbox" name="additional" value="Blinds"> Blinds</label>
+                <label><input type="checkbox" name="additional" value="Handles"> Handles</label>
+                <label><input type="checkbox" name="additional" value="Locks"> Locks</label>
+                <label><input type="checkbox" name="additional" value="Decorative Grids"> Decorative Grids</label>
+            </div>
+
+            <!-- Number of Windows -->
+            <div class="form-group">
+                <label for="quantity">Number of Windows:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+            </div>
+
+            <!-- Comments/Notes -->
+            <div class="form-group">
+                <label for="comments">Special Requests or Notes:</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Add to Cart</button>
+        </form>
+    </div>
+</body>
+</html>
